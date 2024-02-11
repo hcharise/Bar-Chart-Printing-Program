@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB0E80D12B7493410053FC62 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BB0E80D02B7493410053FC62 /* main.cpp */; };
+		BBC839202B79294B008F6A38 /* GraphArray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BBC8391F2B79294B008F6A38 /* GraphArray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,8 @@
 /* Begin PBXFileReference section */
 		BB0E80CD2B7493410053FC62 /* Bar Chart Printing Program */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Bar Chart Printing Program"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB0E80D02B7493410053FC62 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		BBC8391F2B79294B008F6A38 /* GraphArray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GraphArray.cpp; sourceTree = "<group>"; };
+		BBC839212B792974008F6A38 /* GraphArray.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GraphArray.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				BB0E80D02B7493410053FC62 /* main.cpp */,
+				BBC8391F2B79294B008F6A38 /* GraphArray.cpp */,
+				BBC839212B792974008F6A38 /* GraphArray.h */,
 			);
 			path = "Bar Chart Printing Program";
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBC839202B79294B008F6A38 /* GraphArray.cpp in Sources */,
 				BB0E80D12B7493410053FC62 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

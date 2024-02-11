@@ -8,72 +8,17 @@ Syracuse University
 HW #3 - Exercise 5.16 p206-207
 2/13/2024
 
-This program displays a bar graph represented by asterisks based on five numbers.
+This program displays an asterisk bar graph based on the user's input. The program prompts the user for the five integers. It then validates that these integers are between 1 and 30. Then, the program prints the input in the form of a bar graph, with asterisks representing each number (ex. 7 is represented as *******).
  
-MAIN.CPP
+Main.CPP
 
 */
 
-/*
- One interesting application of computers is to display graph and bar charts.
- Write an application that reads five numbers between 1 and 30.
- For each number that's read, your program should display the same number of adjacent asterisks.
- For example, if your program reads the number 7, it should display *******.
- Display the bars of asterisks after you read all five numbers.
- */
-
 #include <iostream>
-#include <iomanip>
+#include "GraphArray.h"
 
 using std::cout;
 using std::cin;
-using std::setw;
-
-class GraphArray {
-public:
-    // CONSTRUCTOR
-    GraphArray() {
-        for (int i = 0; i < 5; i++) {
-            graphData[i] = 0;
-        }
-    } // end GraphArray() constructor
-    
-    // SETTERS
-    void setGraphElement(int element, int value) {
-        // Handle invalid input by reprompting user
-        while (value <= 1 || value >= 30) {
-            cout << "Number is not between 1 and 30.\n"
-                << "Re-enter number: ";
-            cin >> value;
-        }
-        
-        graphData[element] = value;
-       
-    } // end setGraphElements()
-    
-    // GETTERS
-    int getGraphElement(int element) {
-        return graphData[element];
-    } // end getGraph()
-    
-    // printGraph()
-    void printGraph() {
-        cout << "----------------------------------\n"
-            << "Graph of Data:\n\n";
-        for (int i = 0; i < 5; i++) {
-            cout << setw(3) << getGraphElement(i) << ":";
-            for (int j = 0; j < getGraphElement(i); j++) {
-                cout << "*";
-            }
-            cout << "\n";
-        }
-        cout << "----------------------------------\n";
-    } // end printGraph()
-    
-private:
-    int graphData[5];
-    
-}; // end class Array
 
 int main() {
     int userInput;
