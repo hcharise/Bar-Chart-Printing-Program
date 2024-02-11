@@ -8,15 +8,15 @@ Syracuse University
 HW #3 - Exercise 5.16 p206-207
 2/13/2024
 
-This program displays a bar graph represented by asterisks based on five numbers.
- 
+ This program displays an asterisk bar graph based on the user's input. The program prompts the user for the five integers. It then validates that these integers are between 1 and 30. Then, the program prints the input in the form of a bar graph, with asterisks representing each number (ex. 7 is represented as *******).
+
 GraphArray.h
 
 */
 
-
-// need header guard
-
+// Include Guard
+#ifndef GRAPHARRAY_H
+#define GRAPHARRAY_H
 
 class GraphArray {
 public:
@@ -24,10 +24,10 @@ public:
     GraphArray();
     
     // SETTERS
-    void setGraphElement(int element, int value);
+    void setGraphElement(int index, int value);
     
     // GETTERS
-    int getGraphElement(int element);
+    int getGraphElement(int index);
     
     void printGraph();
     
@@ -36,3 +36,4 @@ private:
     
 }; // end class Array
 
+#endif // GRAPHARRAY_H
