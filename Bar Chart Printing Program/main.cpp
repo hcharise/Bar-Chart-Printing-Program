@@ -23,9 +23,11 @@ MAIN.CPP
  */
 
 #include <iostream>
+#include <iomanip>
 
 using std::cout;
 using std::cin;
+using std::setw;
 
 class GraphArray {
 public:
@@ -38,12 +40,15 @@ public:
     
     // SETTERS
     void setGraphElement(int element, int value) {
-        if (1 < value && value < 30) {
-            graphData[element] = value;
-        } else {
-            // Would be better to allow user to re-enter input until it is correct??
-            cout << "Number is not between 1 and 30, so it will be 0.\n";
+        // Handle invalid input by reprompting user
+        while (value <= 1 || value >= 30) {
+            cout << "Number is not between 1 and 30.\n"
+                << "Re-enter number: ";
+            cin >> value;
         }
+        
+        graphData[element] = value;
+       
     } // end setGraphElements()
     
     // GETTERS
@@ -53,14 +58,16 @@ public:
     
     // printGraph()
     void printGraph() {
-        cout << "\n Graph of Data:\n\n";
+        cout << "----------------------------------\n"
+            << "Graph of Data:\n\n";
         for (int i = 0; i < 5; i++) {
-            cout << "Elemebt " << i << " = " << getGraphElement(i) << ":";
+            cout << setw(3) << getGraphElement(i) << ":";
             for (int j = 0; j < getGraphElement(i); j++) {
                 cout << "*";
             }
             cout << "\n";
         }
+        cout << "----------------------------------\n";
     } // end printGraph()
     
 private:
@@ -75,13 +82,13 @@ int main() {
     GraphArray graph1;
     
     // Display welcome meessage
-    cout << "---------------------------------\n"
-        << " Welcome to the Bar Graph Maker! \n"
-        << "---------------------------------\n\n";
+    cout << "----------------------------------\n"
+        << " Welcome to the Bar Graph Maker!!\n"
+        << "----------------------------------\n\n";
     
-    cout << "This program will graph 5 integers"
-        << " that are between 1 and 30.\n";
-    
+    cout << "This program will make a bar graph"
+        << "\nof 5 integers between 1 and 30.\n\n";
+        
     // Get input and add to array
     for (int i = 0; i < 5; i++) {
         cout << "Enter number " << i + 1 << ": ";
@@ -89,13 +96,10 @@ int main() {
         graph1.setGraphElement(i, userInput);
     }
     
-    // Print array
-    cout << "Array is: ";
-    for(int i = 0; i < 5; i++) {
-        cout << graph1.getGraphElement(i) << "   ";
-    }
     cout << "\n";
     
     graph1.printGraph();
     
+    cout << "\n";
+
 } // end main()
