@@ -42,7 +42,7 @@ public:
             graphData[element] = value;
         } else {
             // Would be better to allow user to re-enter input until it is correct??
-            cout << "Number is not between 1 and 30.";
+            cout << "Number is not between 1 and 30, so it will be 0.\n";
         }
     } // end setGraphElements()
     
@@ -52,6 +52,17 @@ public:
     } // end getGraph()
     
     // printGraph()
+    void printGraph() {
+        cout << "\n Graph of Data:\n\n";
+        for (int i = 0; i < 5; i++) {
+            cout << "Elemebt " << i << " = " << getGraphElement(i) << ":";
+            for (int j = 0; j < getGraphElement(i); j++) {
+                cout << "*";
+            }
+            cout << "\n";
+        }
+    } // end printGraph()
+    
 private:
     int graphData[5];
     
@@ -64,23 +75,27 @@ int main() {
     GraphArray graph1;
     
     // Display welcome meessage
-    cout << "---------------------------------"
-        << " Welcome to the Bar Graph Maker! "
+    cout << "---------------------------------\n"
+        << " Welcome to the Bar Graph Maker! \n"
         << "---------------------------------\n\n";
     
-    cout << "This program will graph 5 integers between 1 and 30.\n";
+    cout << "This program will graph 5 integers"
+        << " that are between 1 and 30.\n";
     
     // Get input and add to array
     for (int i = 0; i < 5; i++) {
-        cout << "Enter the first number: ";
+        cout << "Enter number " << i + 1 << ": ";
         cin >> userInput;
         graph1.setGraphElement(i, userInput);
     }
     
     // Print array
-    cout << "Array is :";
+    cout << "Array is: ";
     for(int i = 0; i < 5; i++) {
         cout << graph1.getGraphElement(i) << "   ";
     }
+    cout << "\n";
+    
+    graph1.printGraph();
     
 } // end main()
